@@ -3,19 +3,15 @@ import SubCategoryList from "../SubCategory";
 import "./styles.css"
 const CategoryList=() =>{
   const [inventoryItemData, setInventoryItemData] = useState(
-    JSON.parse(localStorage.getItem("categories")) || []
+    JSON.parse(localStorage.getItem("inventoryData")) || []
   );
 
   useEffect(() => {
-    let editData = JSON.parse(localStorage.getItem("categories"));
+    let editData = JSON.parse(localStorage.getItem("inventoryData"));
     if (editData) {
       setInventoryItemData(editData);
     } else {
-      fetch("./data.json", {
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
+      fetch("./data.json",{
       })
         .then((response) => response.json())
         .then((data) => setInventoryItemData(data));
@@ -34,7 +30,7 @@ const CategoryList=() =>{
       return element;
     });
     setInventoryItemData(updateData);
-    localStorage.setItem("categories", JSON.stringify(inventoryItemData));
+    localStorage.setItem("inventoryData", JSON.stringify(inventoryItemData));
   };
 
   return (
@@ -47,7 +43,7 @@ const CategoryList=() =>{
           <li>STOCKS</li>
           <li>ACTIONS</li>
         </ul>
-      {inventoryItemData.map(({ id, name, availability, isShow, subcategory }) => {
+      {inventoryItemData.map(({ id, name, isAvailability, isShow, subcategory }) => {
         return (
           <div className="main-category mb-20" key={id}>
             <div className="ui grid segment bg-header border-none">
@@ -59,8 +55,8 @@ const CategoryList=() =>{
                     <input
                       id={id}
                       type="checkbox"
-                      checked={availability}
-                      onChange={(evt) => handleToggleCheck(evt, "availability")}
+                      checked={isAvailability}
+                      onChange={(evt) => handleToggleCheck(evt, "isAvailability")}
                     
                     />
                     <label>
@@ -69,7 +65,7 @@ const CategoryList=() =>{
                         onClick={(evt) => handleToggleCheck(evt, "isShow")}
                         className={
                           "icon " +
-                          (availability && isShow ? "minus blue" : "plus")
+                          (isAvailability && isShow ? "minus blue" : "plus")
                         }
                       ></i>
                     </label>
@@ -77,7 +73,7 @@ const CategoryList=() =>{
                 </div>
               </div>
             </div>
-            {availability && isShow && <SubCategoryList list={subcategory} />}
+            {isAvailability && isShow && <SubCategoryList list={subcategory} />}
           </div>
         );
       })}

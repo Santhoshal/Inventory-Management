@@ -1,8 +1,9 @@
 import React, { useState } from "react";
+import SearchItem from "../SearchItem";
 
 const Item=(props)=> {
   const [data, setdata] = useState(props.list);
-  // const [isError, setError] = useState("please enter a value");
+  // const [isVal, setVal] = useState();
 
   const handleUpdate = (e) => {
     const updateData = props.list.map((element) => {
@@ -27,8 +28,6 @@ const Item=(props)=> {
     });
     setdata(updateData);
   };
- 
-  
 
   const isNumberKey = (event) => {
     if (
@@ -62,76 +61,76 @@ const Item=(props)=> {
 //  const onBlurCheck = (e) => {
 //     return doValidate();
 // };
-  return data.map(
-    ({ id, name, color, options, skuid, stocks, isEdit, isUnlimited }) => {
-      return (
-        <div className="ui grid ind-item" key={id}>
-          <div className="six column row ui segment">
-            <div className="column">{name}</div>
-            <div className="column">{color}</div>
-            <div className="column">{options}</div>
-            <div className="column">{skuid}</div>
-            <div className="column">
-              {isEdit && (
-                <div className="ui two column grid">
-                  <div
-                    className={
-                      "column ui mini icon input w-65 " +
-                      (stocks || isUnlimited ? "" : "error")
-                    }
-                  >
-                    <input
-                      id={id}
-                      type="number"
-                      className="bg-grey"
-                      placeholder="Enter value"
-                      value={stocks}
-                      onChange={(e) => handleUpdate(e)}
-                      onKeyDown={(event) => isNumberKey(event)}
-                      // onBlur={(evt) => onBlurCheck(evt)}
-                     
-                    />
-                  </div>
-                  <div className="column pt-20 fs-12">
-                    <div className="ui checkbox">
-                      <input
-                        id={id}
-                        type="checkbox"
 
-                        checked={isUnlimited}
-                        onChange={(e) => handleCheck(e, "isUnlimited")}
-                      />
-                      <label>Unlimited</label>
-                    </div>
-                  </div>
-                </div>
-              )}
-              {!isEdit && <span> {isUnlimited ? "Unlimited" : stocks}</span>}
+const items = data.map(data=>{
+  const { id, itemname, color, options, skuid, stocks, isEdit, isUnlimited } = data;
+  return(
+    <div className="ui grid ind-item" key={id}>
+    <div className="six column row ui segment">
+      <div className="column">{itemname}</div>
+      <div className="column">{color}</div>
+      <div className="column">{options}</div>
+      <div className="column">{skuid}</div>
+      <div className="column">
+        {isEdit && (
+          <div className="ui two column grid">
+            <div
+              className={
+                "column ui mini icon input w-65 " +
+                (stocks || isUnlimited ? "" : "error")
+              }
+            >
+              <input
+                id={id}
+                type="number"
+                className="bg-grey"
+                placeholder="Enter value"
+                value={stocks}
+                onChange={(e) => handleUpdate(e)}
+                onKeyDown={(event) => isNumberKey(event)}
+                // onBlur={(evt) => onBlurCheck(evt)}
+               
+              />
             </div>
-            <div className="right aligned floated column">
-              <button
-                id={id}
-                style={{ display: isEdit ? "block" : "none" }}
-                className={
-                  "ui  primary button mini  circular f-right " +
-                  (stocks || isUnlimited ? "" : "disabled")
-                }
-                onClick={(e) => handleInputSave(e, stocks)}
-              >
-                Save
-              </button>
-              <button
-                id={id}
-                style={{ display: !isEdit ? "block" : "none" }}
-                className={`ui button mini circular f-right mr-20`}
-                onClick={(e) => handleCheck(e, "isEdit")}
-              >Edit</button>
+            <div className="column pt-20 fs-12">
+              <div className="ui checkbox">
+                <input
+                  id={id}
+                  type="checkbox"
+                  checked={isUnlimited}
+                  onChange={(e) => handleCheck(e, "isUnlimited")}
+                />
+                <label>Unlimited</label>
+              </div>
             </div>
           </div>
-        </div>
-      );
-    }
-  );
+        )}
+        {!isEdit && <span> {isUnlimited ? "Unlimited" :stocks}</span>}
+      </div>
+      <div className="right aligned floated column">
+        <button
+          id={id}
+          style={{ display: isEdit ? "block" : "none" }}
+          className={
+            "ui  primary button mini  circular f-right " +
+            (stocks || isUnlimited ? "" : "disabled")
+          }
+          onClick={(e) => handleInputSave(e, stocks)}
+        >
+          Save
+        </button>
+        <button
+          id={id}
+          style={{ display: !isEdit ? "block" : "none" }}
+          className={`ui button mini circular f-right mr-20`}
+          onClick={(e) => handleCheck(e, "isEdit")}
+        >Edit</button>
+      </div>
+    </div>
+  </div>
+  )
+})
+return items;
 }
 
 

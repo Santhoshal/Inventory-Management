@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Item from "../Item/index";
+import SearcItem from "../SearchItem"
 const SubCategory=(props) =>{
   const [data, setdata] = useState(props.list);
 
@@ -15,7 +16,7 @@ const SubCategory=(props) =>{
     setdata(newData);
   };
 
-  return data.map(({ id, name, availability, isShow, items }) => {
+  return data.map(({ id, name, isAvailability, isShow, items }) => {
     return (
       <div className="sub-category" key={props.id + '-' + id}>
         <div className="ui grid segment bg-header">
@@ -27,15 +28,15 @@ const SubCategory=(props) =>{
                 <input
                   id={id}
                   type="checkbox"
-                  checked={availability}
-                  onChange={(e) => handleToggleClicks(e, "availability")}
+                  checked={isAvailability}
+                  onChange={(e) => handleToggleClicks(e, "isAvailability")}
                 />
                 <label>
                   <i
                     id={id}
                     onClick={(e) => handleToggleClicks(e, "isShow")}
                     className={
-                      "icon " + (availability && isShow ? "minus blue" : "plus")
+                      "icon " + (isAvailability && isShow ? "minus blue" : "plus")
                     }
                   ></i>
                 </label>
@@ -43,7 +44,7 @@ const SubCategory=(props) =>{
             </div>
           </div>
         </div>
-        {availability && isShow && <Item list={items} />}
+        {isAvailability && isShow && <Item list={items} />}
       </div>
     );
   });

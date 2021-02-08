@@ -1,12 +1,9 @@
 .body {
   color: #787878;
 }
-
 .ui-container {
   margin: 0 40px;
 }
-
-
 .bg-header {
   background-color: #fcfbfc !important;
   margin: 0 !important;
@@ -20,7 +17,9 @@ i.icon{
 .sub-category > div.grid {
   padding-left: 20px;
 }
-
+.sub-category > div.grid.ind-item{ 
+  padding-left: 7px !important; 
+}
 .bg-header > div > div.left {
   text-transform: uppercase;
   font-weight: 600;
@@ -30,27 +29,22 @@ i.icon{
   margin-right: 20px !important;
 }
 
-
+/* .ml{
+  margin-left: 20px !important;
+} */
 
 .f-right {
   float: right;
 }
 
-.w-65 {
+/* .w-65 {
   width: 65%;
-}
+} */
 
 .pt-20 {
   padding-top: 20px !important;
 }
 
-.fs-12 {
-  font-size: 12px !important;
-}
-
-.fs-13 {
-  font-size: 13px !important;
-}
 
 .radius-500 {
   border-radius: 500rem !important;
@@ -98,11 +92,9 @@ input[type=number] {
 .ind-item > div,
 .ind-item-grid > div {
   padding: 10px !important;
-  /* margin-top: -1rem; */
   margin-left: 0.5rem !important;
   margin-right: 2rem !important;
   border-radius: 0px !important;
-  /* padding-left: 20px !important; */
   margin-bottom: 1rem !important;
   border-left: 0px !important;
   border-right: 0px !important;
@@ -117,4 +109,9 @@ input[type=number] {
   margin-left: 2rem !important;
   margin-bottom: 0rem !important;
   text-transform: uppercase;
+}
+
+.search-input{
+  position: absolute;
+    top: 13rem;
 }

@@ -3,18 +3,18 @@
     {
         "id": 1,
         "name" : "Vegetables & fruits",        
-        "availability": true,
+        "isAvailability": true,
         "isShow" : true,
         "subcategory": [
             {
             "id": 1,
             "name" : "vegetables",            
-            "availability": true,
+            "isAvailability": true,
             "isShow" : true,
             "items": [
                 {
                     "id" : 1,
-                    "name": "Cucumber",
+                    "itemname": "Cucumber",
                     "color": "#00b121",
                     "options": "large",
                     "skuid": "SKU02596053",
@@ -24,7 +24,7 @@
                 },
                 {
                     "id" : 2,
-                    "name": "Carrot",
+                    "itemname": "Carrot",
                     "color": "#00b121",
                     "options": "large",
                     "skuid": "SKU02596053",
@@ -34,9 +34,9 @@
                 },
                 {
                     "id" : 3,
-                    "name": "Green chilli",
+                    "itemname": "Green chilli",
                     "color": "#004341",
-                    "options": "large",
+                    "options": "medium",
                     "skuid": "SKU02596053",
                     "stocks": 15,
                     "isEdit": false,
@@ -44,9 +44,9 @@
                 },
                 {
                     "id" : 4,
-                    "name": "Patatto",
+                    "itemname": "Patatto",
                     "color": "#00b121",
-                    "options": "large",
+                    "options": "small",
                     "skuid": "SKU02596053",
                     "stocks": 55,
                     "isEdit": false,
@@ -57,12 +57,12 @@
             {
                 "id": 2,
                 "name" : "Fruits",            
-                "availability": true,
+                "isAvailability": true,
                 "isShow" : true,
                 "items": [
                     {
                         "id" : 1,
-                        "name": "Pineapple",
+                        "itemname": "Pineapple",
                         "color": "#00b121",
                         "options": "large",
                         "skuid": "SKU02596053",
@@ -72,9 +72,9 @@
                     },
                     {
                         "id" : 2,
-                        "name": "Banana",
+                        "itemname": "Banana",
                         "color": "#fefefe",
-                        "options": "large",
+                        "options": "small",
                         "skuid": "SKU02596053",
                         "stocks": 18,
                         "isEdit": false,
@@ -82,7 +82,7 @@
                     },
                     {
                         "id" : 3,
-                        "name": "Orange",
+                        "itemname": "Orange",
                         "color": "#345678",
                         "options": "large",
                         "skuid": "SKU02596053",
@@ -97,18 +97,18 @@
     {
         "id": 2,
         "name" : "Breads",        
-        "availability": false,
+        "isAvailability": false,
         "isShow" : false,
         "subcategory": [
             {
             "id": 1,
             "name" : "Breads",            
-            "availability": true,
+            "isAvailability": true,
             "isShow" : true,
             "items": [
                 {
                     "id" : 1,
-                    "name": "Sweet bread",
+                    "itemname": "Sweet bread",
                     "color": "#00b121",
                     "options": "large",
                     "skuid": "SKU02596053",
@@ -121,12 +121,12 @@
             {
                 "id": 2,
                 "name" : "Dairy",            
-                "availability": true,
+                "isAvailability": true,
                 "isShow" : true,
                 "items": [
                     {
                         "id" : 1,
-                        "name": "cheese",
+                        "itemname": "cheese",
                         "color": "#00b121",
                         "options": "small",
                         "skuid": "SKU02596053",
@@ -141,20 +141,20 @@
     {
         "id": 3,
         "name" : "Snacks",        
-        "availability": true,
+        "isAvailability": true,
         "isShow" : false,
         "subcategory": [
             {
             "id": 1,
             "name" : "Snacks",
-            "availability": true,
+            "isAvailability": true,
             "isShow" : false,
             "items": [
                 {
                     "id" : 1,
-                    "name": "Pop corn",
+                    "itemname": "Chacolate",
                     "color": "#00b121",
-                    "options": "large",
+                    "options": "medium",
                     "skuid": "SKU02596053",
                     "stocks": 24,
                     "isEdit": false,

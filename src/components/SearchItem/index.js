@@ -1,10 +1,10 @@
 import React from "react";
 
-const SearchItem=()=> {
+const SearchItem=(props)=> {
   return (
     <div className="ui-container mt-40 mb-30">
-      <form>
-        <div className="ui seven column grid">
+      
+        <div className="ui seven column grid ">
           <div className="column">
             <div className="ui fluid category mini search">
               <div className="ui icon input">
@@ -16,13 +16,16 @@ const SearchItem=()=> {
               </div>
             </div>
           </div>
-          <div className="column">
+          <div className="column ml-20">
             <button className="ui button mini circular">Search</button>
           </div>
         </div>
-      </form>
+
     </div>
   );
 }
 
 export default SearchItem;
+
+
+
