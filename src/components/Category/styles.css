@@ -1,0 +1,17 @@
+ul{
+    display: flex;
+}
+ul li{
+    list-style: none;
+}
+ul li{
+    padding: 5px 0px 20px 0px;
+    width: 16.66%;
+    text-align: left;
+}
+.inventory-lists ul li{
+    border-bottom: 1px solid #ddd;
+}
+.inventory-wrapper{
+    margin: 0 40px;
+}
