@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Item from "../Item/index";
-import SearcItem from "../SearchItem"
-const SubCategory=(props) =>{
+const SubCategory = (props) => {
   const [data, setdata] = useState(props.list);
 
   const handleToggleClicks = (evt, value) => {
@@ -49,5 +48,4 @@ const SubCategory=(props) =>{
     );
   });
 }
- 
 export default SubCategory;

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import SubCategoryList from "../SubCategory";
 import "./styles.css"
-const CategoryList=() =>{
+const CategoryList = () => {
   const [inventoryItemData, setInventoryItemData] = useState(
     JSON.parse(localStorage.getItem("inventoryData")) || []
   );
@@ -11,12 +11,12 @@ const CategoryList=() =>{
     if (editData) {
       setInventoryItemData(editData);
     } else {
-      fetch("./data.json",{
+      fetch("./data.json", {
       })
         .then((response) => response.json())
         .then((data) => setInventoryItemData(data));
     }
-    return () => {};
+    return () => { };
   }, []);
 
   const handleToggleCheck = (evt, value) => {
@@ -35,14 +35,14 @@ const CategoryList=() =>{
 
   return (
     <div className="inventory-wrapper pb-20">
-        <ul>
-          <li>ITEM NAME</li>
-          <li>COLOR</li>
-          <li>OPTIONS</li>
-          <li>SKUID</li>
-          <li>STOCKS</li>
-          <li>ACTIONS</li>
-        </ul>
+      <ul>
+        <li>ITEM NAME</li>
+        <li>COLOR</li>
+        <li>OPTIONS</li>
+        <li>SKUID</li>
+        <li>STOCKS</li>
+        <li>ACTIONS</li>
+      </ul>
       {inventoryItemData.map(({ id, name, isAvailability, isShow, subcategory }) => {
         return (
           <div className="main-category mb-20" key={id}>
@@ -57,7 +57,7 @@ const CategoryList=() =>{
                       type="checkbox"
                       checked={isAvailability}
                       onChange={(evt) => handleToggleCheck(evt, "isAvailability")}
-                    
+
                     />
                     <label>
                       <i
@@ -80,6 +80,4 @@ const CategoryList=() =>{
     </div>
   );
 }
-
-
 export default CategoryList;

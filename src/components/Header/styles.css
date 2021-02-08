@@ -10,10 +10,10 @@
     margin-top: 0;
     font-size: 1rem;
 }
-.inventory-wrapper .header{
+.inventory-header .header{
     border: none;
     margin: calc(2rem - .14285714em) 0 1rem;
-    padding: 0 0;
+    padding: 10px 20px ;
     font-weight: 700;
     line-height: 1.28571429em;
     text-transform: none;
